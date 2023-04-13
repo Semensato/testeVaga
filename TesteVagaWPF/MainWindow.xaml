@@ -1,0 +1,39 @@
+﻿<Window x:Class="TesteVagaWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TesteVagaWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="576">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="54*" />
+            <ColumnDefinition Width="17*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="10" Width="120" TextWrapping="Wrap">
+                Guilherme Semensato
+            </TextBlock>
+            <Button Width="120" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Name="btnColetarDados" Click="btnColetarDados_Click">
+                Coletar dados
+            </Button>
+            <Button Width="120" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Name="btnExibirDados" Click="btnExibirDados_Click" IsEnabled="false">
+                Exibir dados
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="1" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Button Width="110" Height="20" Name="btnSelDiretorio" VerticalAlignment="Center" Click="btnSelDiretorio_Click">
+                    Selecionar diretório
+                </Button>
+                <TextBox x:Name="txtDiretorio" Width="182" Margin="10" VerticalAlignment="Center" IsReadOnly="True" />
+            </StackPanel>
+            <RichTextBox x:Name="txtConteudoArquivo" IsReadOnly="true">
+                <RichTextBox.Width>300</RichTextBox.Width>
+                <RichTextBox.Height>300</RichTextBox.Height>
+            </RichTextBox>
+        </StackPanel>
+    </Grid>
+</Window>
